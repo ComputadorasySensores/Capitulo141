@@ -1,0 +1,13 @@
+Instalación de Wiring Pi:
+
+sudo apt install git swig python3-dev python3-setuptools
+
+git clone --recursive https://github.com/orangepi-xunlong/wiringOP-Python -b next
+
+cd wiringOP-Python
+
+git submodule update --init --remote
+
+python3 generate-bindings.py > bindings.i
+
+sudo python3 setup.py install
